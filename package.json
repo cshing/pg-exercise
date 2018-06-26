@@ -4,6 +4,7 @@
   "description": "",
   "main": "test_script.js",
   "dependencies": {
+    "moment": "^2.22.2",
     "pg": "^7.4.3"
   },
   "devDependencies": {},
