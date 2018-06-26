@@ -20,7 +20,7 @@ client.connect((err) => {
     return console.error("Connection Error", err);
   }
   
-  client.query("SELECT * FROM famous_people WHERE first_name = $1", [name], (err, result) => {
+  client.query("SELECT * FROM famous_people WHERE first_name = $1 OR last_name = $1", [name], (err, result) => {
     if (err) {
       return console.error("error running query", err);
     }
