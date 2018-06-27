@@ -14,7 +14,12 @@ const knex = require('knex')({
 
 const name = process.argv[2];
 
-knex.select().from('famous_people')
+// Use toString() to check what is the select query:
+// console.log(knex('famous_people').toString())
+
+// long way of select query:
+// knex.select().from('famous_people')
+knex('famous_people') // shorthand for select * from 'famous_people'
     .where('first_name','=', name)
     .orWhere('last_name', '=', name)
     .asCallback((err, rows) => {
